@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Cybersecurity-Inspired Dark CSS Theme (Glassmorphism & Cyber Accent)
+   ========================================================================== */
+
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-glass: rgba(17, 24, 39, 0.7);
+  --border-glass: rgba(0, 242, 254, 0.15);
+  --color-cyan: #00f2fe;
+  --color-blue: #4facfe;
+  --color-text-muted: #9ca3af;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --glow-cyan: 0 0 15px rgba(0, 242, 254, 0.25);
+  --glow-blue: 0 0 15px rgba(79, 172, 254, 0.25);
+  --font-family: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #f3f4f6;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-cyber-accent {
+  background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Card styling */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 242, 254, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5), var(--glow-cyan);
+  transform: translateY(-2px);
+}
+
+/* Glass Form Inputs */
+.glass-input {
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f3f4f6 !important;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input::placeholder {
+  color: #6b7280;
+}
+
+.glass-input:focus {
+  background: rgba(17, 24, 39, 0.8);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+  outline: none;
+}
+
+.glass-input:disabled {
+  background: rgba(17, 24, 39, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #9ca3af !important;
+}
+
+/* Cybersecurity Accented Buttons */
+.btn-cyber {
+  background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
+  color: #030712 !important;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-blue);
+}
+
+.btn-cyber:hover {
+  opacity: 0.95;
+  box-shadow: var(--glow-cyan), 0 0 20px rgba(0, 242, 254, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-cyber-outline {
+  background: transparent;
+  border: 1px solid var(--color-cyan);
+  color: var(--color-cyan) !important;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-cyber-outline:hover {
+  background: rgba(0, 242, 254, 0.1);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-1px);
+}
+
+/* Custom Password Indicator Bars */
+.strength-meter-bar {
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.strength-meter-bar.weak { background-color: var(--color-danger); }
+.strength-meter-bar.fair { background-color: var(--color-warning); }
+.strength-meter-bar.good { background-color: #3b82f6; }
+.strength-meter-bar.strong { background-color: var(--color-success); }
+
+/* Monospace Security Output (e.g. Logs/API details) */
+.security-console {
+  font-family: var(--font-mono);
+  background-color: #030712;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 8px;
+  color: #34d399;
+  padding: 15px;
+  font-size: 0.875rem;
+}
+
+/* Navbar Customisation */
+.navbar-cyber {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-cyber .navbar-brand {
+  font-weight: 800;
+  color: #fff !important;
+  letter-spacing: -0.025em;
+}
+
+.navbar-cyber .nav-link {
+  color: var(--color-text-muted) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-cyber .nav-link:hover, 
+.navbar-cyber .nav-link.active {
+  color: var(--color-cyan) !important;
+}
+
+/* Toast Container Overlay */
+.toast-container {
+  z-index: 1080;
+}
+
+/* Gradient Badge style */
+.badge-cyber {
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--color-cyan);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.badge-cyber-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-weight: 600;
+  border-radius: 20px;
+}

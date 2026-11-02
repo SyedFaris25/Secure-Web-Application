@@ -1,0 +1,39 @@
+# Root Git Ignore Configuration
+
+# Virtual environment ignores
+venv/
+.venv/
+env/
+backend/venv/
+
+# Nested extraction folder ignore
+Secure-Web-Application-main/
+
+# Backend specific ignores
+backend/instance/
+backend/uploads/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/.env.local
+backend/users.db
+backend/secure_app.db
+
+# Frontend specific ignores
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+
+# System/IDE ignores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
